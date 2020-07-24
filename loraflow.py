@@ -14,7 +14,8 @@ import RPi.GPIO as GPIO
 #we will send messages to arduino nodes by writing commands in pipe
 #
 # For instance:
-# echo -n "{\"a\":\"report\",\"d\":\"all\"}" > /tmp/loraflow
+# echo -n "{\"a\":\"report\",\"d\":\"all\",\"w\":1}" > /tmp/loraflow
+# w - wake up
 
 FIFO = '/tmp/loraflow'
 
@@ -28,6 +29,7 @@ db_select_db = 'loraflow';
 
 ser = serial.Serial(
  port='/dev/ttyS0', #might be  port='/dev/ttyAMA0' as well
+ #port='/dev/ttyAMA0',
  baudrate = 9600,
  parity=serial.PARITY_NONE,
  stopbits=serial.STOPBITS_ONE,
@@ -145,11 +147,11 @@ def add_field( fieldName, fieldValue ):
     if isinstance(fieldValue, str):
         dbType = "VARCHAR(254) NOT NULL DEFAULT ''"
     if isinstance(fieldValue, bool):
-        dbType = "BOOL NOT NULL"
+        dbType = "BOOL NOT NULL DEFAULT 0"
     if isinstance(fieldValue, float):
-        dbType = "DECIMAL(11,2) NOT NULL"
+        dbType = "DECIMAL(11,2) NOT NULL DEFAULT 0"
     if isinstance(fieldValue, int):
-        dbType = "INT NOT NULL"
+        dbType = "INT NOT NULL DEFAULT 0"
     
     sql = "ALTER TABLE `sensor_data` ADD " + fieldName + " " + dbType;
     print("New field SQL steatment: ", sql)
@@ -170,8 +172,8 @@ def save_sensor_details_data( json ):
     
 
     #replace d to device
-    json["device"] = json["d"]
-    json.pop('d', None)
+    json["device"] = json["rd"]
+    json.pop('rd', None)
     
     
     reloadColumns = False
