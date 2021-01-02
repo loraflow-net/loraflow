@@ -6,16 +6,17 @@
 
 ## Installation
 0) **Type “sudo raspi-config” and enable serial communication under  “Interfacing Options” > Serial**
-1) Install packages
+1) git clone https://github.com/loraflow-net/loraflow.git
+2) sudo pip3 install -r loraflow/requirements.txt
+3) chmod +x loraflow/install
+4) ./loraflow/install
+5) "sudo nano -w /usr/local/bin/loraflow.py" and add onlinedb.net API KEY (Free Service)
+
+You can install packages separately if needed 
 - sudo apt install python3-pip 
 - python3 -m pip install pyserial
 - python3 -m pip install RPi.GPIO
 - python3 -m pip install websocket-client
-
-2) git clone https://github.com/loraflow-net/loraflow.git
-3) chmod +x loraflow/install
-4) ./loraflow/install
-5) "sudo nano -w /usr/local/bin/loraflow.py" and add onlinedb.net API KEY (Free Service)
 
 ## Why Lora is perfect technology for IoT messaging?
 ## Benefits: 
