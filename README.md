@@ -4,6 +4,12 @@
 * Low power consumption (only 0.15mA with Arduino mini)
 ![GreenHouse example](https://github.com/loraflow-net/loraflow/blob/master/img/greenhouse.png)
 
+## Installation
+1) git clone https://github.com/loraflow-net/loraflow.git
+2) chmod +x loraflow/install
+3) ./loraflow/install
+4) "sudo nano -w loraflow/loraflow.py" and add onlinedb.net API KEY (Free Service)
+
 ## Why Lora is perfect technology for IoT messaging?
 ## Benefits: 
 * Long distance (up to 8km)

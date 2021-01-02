@@ -3,7 +3,7 @@
 
 ### BEGIN INIT INFO
 # Provides:          loraflow.py
-# Required-Start:    $remote_fs $syslog mysql
+# Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6

@@ -17,7 +17,7 @@ sudo /etc/init.d/loraflow.sh start
 
 echo "LoRa Flow has been installed!"
 echo "+---------------------------------------------------------+"
-echo "| Please configure Maria DB (MySQL) credentials: sudo nano -w loraflow/loraflow.py"
+echo "| Please configure OnlineDB.NET API KEY: sudo nano -w loraflow/loraflow.py"
 echo "+---------------------------------------------------------+"
 echo "START COMMAND: /etc/init.d/loraflow.sh start"
 echo "STOP COMMAND: /etc/init.d/loraflow.sh stop\n"
