@@ -5,10 +5,17 @@
 ![GreenHouse example](https://github.com/loraflow-net/loraflow/blob/master/img/greenhouse.png)
 
 ## Installation
-1) git clone https://github.com/loraflow-net/loraflow.git
-2) chmod +x loraflow/install
-3) ./loraflow/install
-4) "sudo nano -w loraflow/loraflow.py" and add onlinedb.net API KEY (Free Service)
+0) **Type “sudo raspi-config” and enable serial communication under  “Interfacing Options” > Serial**
+1) Install packages
+- sudo apt install python3-pip 
+- python3 -m pip install pyserial
+- python3 -m pip install RPi.GPIO
+- python3 -m pip install websocket-client
+
+2) git clone https://github.com/loraflow-net/loraflow.git
+3) chmod +x loraflow/install
+4) ./loraflow/install
+5) "sudo nano -w /usr/local/bin/loraflow.py" and add onlinedb.net API KEY (Free Service)
 
 ## Why Lora is perfect technology for IoT messaging?
 ## Benefits: 
